@@ -1,7 +1,7 @@
 # synthiaminer
 Setup CommuneX Synthia miner on Ubuntu
 
-### 1. Ubuntu and update and upgrade
+### 1. Update and upgrade
 - Let's start with updating and upgrading our installation.
 
 ```sh
