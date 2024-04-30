@@ -23,6 +23,11 @@ sudo apt install git -y
 sudo apt install pipx -y
 ```
 
+- Fix paths for pipx
+```sh
+pipx ensurepath
+```
+
 - Install poetry
 ```sh
 pipx install poetry
@@ -40,7 +45,7 @@ sudo npm install pm2 -g
 
 - Or you can do all in one go.
 ```sh
-sudo apt install python3 && sudo apt install git -y && sudo apt install pipx -y && pipx install poetry && sudo apt install npm -y && sudo npm install pm2 -g
+sudo apt install python3 && sudo apt install git -y && sudo apt install pipx -y && pipx ensurepath && pipx install poetry && sudo apt install npm -y && sudo npm install pm2 -g
 ```
 
 ### 3. Clone Synthia git and change directory
