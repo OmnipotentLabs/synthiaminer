@@ -55,10 +55,6 @@ cd synthia
 ```
 
 ### 4. Setup Poetry
-- Install poetry
-```sh
-pipx install poetry
-```
 
 - Install dependencies for Synthia
 ```sh
