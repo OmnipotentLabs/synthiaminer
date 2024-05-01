@@ -73,6 +73,7 @@ poetry shell
 
 ### 5. Create key
 - Create CommuneAi key on CommuneX, replace <key-name> with the name you want for your key
+- Remember that this key will need at least 2.5 $COMAI for the burn fee when you register your miner
 ```sh
 comx key create <key-name>
 ```
@@ -83,7 +84,24 @@ comx key create <key-name>
 nano env/config.env.sample
 ```
 
-### 7. Test miner.
+
+### 7. Get public IP.
+- Find your public IP, you will need this for registering a module.
+```sh
+curl -4 https://ipinfo.io/ip
+```
+
+### 8. Register module.
+- Register module on Subnet 3
+- Remember that you need at least 2.5 $COMIA for the burn fee
+- Replace <key-name> with your key
+- Replace <your-public-IP> with your IP
+- You can also change the port if you want.
+```sh
+comx module register my-test-miner <key-name> --ip <your-public-IP> --port 8000 --netuid 3 
+```
+
+### 9. Test miner.
 - Make sure you have signed up for Anthropic or Openrouter and created API key. Enter the API key you want to use and save the file as env/config.env
 - Don't forget to replace <key-name> with the name of your key (step 5).
 - Openrouter example.
@@ -99,10 +117,11 @@ comx module serve synthia.miner.anthropic.AnthropicModule <key-name> --subnets-w
 
 <br/><br/>
 
-### 8. Start miner with pm2 and check logs
-- Start miner, remember to replace <pm2-name> with the name you want. 
+### 10. Start miner with pm2 and check logs
+- Start miner, remember to replace <pm2-name> with the name you want.
+- Also replace <key-name> with your key.
 ```sh
-pm2 start "comx module serve synthia.miner.anthropic.OpenrouterModule comxkey --subnets-whitelist 3 --ip 0.0.0.0" --name <pm2-name>
+pm2 start "comx module serve synthia.miner.anthropic.OpenrouterModule <key-name> --subnets-whitelist 3 --ip 0.0.0.0" --name <pm2-name>
 ```
 
 - Start logs.
