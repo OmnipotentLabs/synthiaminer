@@ -80,6 +80,7 @@ comx key create <key-name>
 
 ### 6. Create environment file.
 - Make sure you have signed up for Anthropic or Openrouter and created API key. Enter the API key you want to use and save the file as env/config.env
+- If you are using openrouter you will need to "OPENROUTER_API_KEY=" to the config file and add your key
 ```sh
 nano env/config.env.sample
 ```
